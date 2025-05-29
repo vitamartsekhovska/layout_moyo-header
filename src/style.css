@@ -1,11 +1,13 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 html {
   font-family: Roboto, sans-serif;
   font-weight: 500;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-style: normal;
+  font-size: 12px;
 }
 
 .header {
@@ -13,23 +15,19 @@ html {
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
-  background-color: white;
 }
 
 .logo {
   height: 40px;
-  width: 40px;
-}
-
-.nav {
-  height: 60px;
-  align-items: center;
+  display: flex;
 }
 
 .nav_list {
   display: flex;
+  align-items: center;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .nav_item:not(:first-child) {
@@ -37,28 +35,31 @@ html {
 }
 
 .nav_link {
-  height: 15px;
+  display: block;
+  text-align: center;
+  line-height: 60px;
+  height: 60px;
   text-decoration: none;
   color: black;
   text-transform: uppercase;
 }
 
 .nav_link:hover {
-  text-decoration: underline;
-  text-decoration-color: #00acdc;
+  color: #00acdc;
+}
+
+.is-active {
+  position: relative;
+  color: #00acdc;
 }
 
 .is-active::after {
-  position: relative;
-  display: block;
+  position: absolute;
   content: '';
   height: 4px;
   width: 100%;
   border-radius: 8px;
   background-color: #00acdc;
-  bottom: -21px;
-}
-
-.active {
-  color: #00acdc;
+  bottom: 0;
+  left: 0;
 }
